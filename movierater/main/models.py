@@ -10,3 +10,9 @@ class Movie(models.Model):
                                       max_digits=10)
     photo = models.ImageField(null=True, blank=True)
 
+    def __str__(self):
+        return self.name_with_year()
+
+    def name_with_year(self):
+        return str(self.name) + " (" + str(self.year) + ")"
+
